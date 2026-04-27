@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
 import { dbUri } from "../config/config.service.js";
 
+
 const dbConnection = async () => {
     try {
         await mongoose.connect(dbUri)
-        console.log(dbUri);
-        
+
+
         console.log(`MongoDB connected successflly`);
 
     } catch (error) {

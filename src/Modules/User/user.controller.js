@@ -127,7 +127,6 @@ userController.post("/signup", multer_cloud({ allowedType: extinstions.image }).
     }
 
     return res.status(200).json({ message: "user Created successflly ", user: data })
-
 })
 
 

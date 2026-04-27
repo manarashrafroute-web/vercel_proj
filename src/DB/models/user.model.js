@@ -21,9 +21,9 @@ const userSchema = new mongoose.Schema({
     googleId: {
         type: String,
         required: false,
-        unique: true,
+      //  unique: true,
         sparse: true,  // ✅ Add this - allows multiple null values
-        default: null
+        //default: null
     },
     email: {
         type: String,
