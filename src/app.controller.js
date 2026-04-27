@@ -16,16 +16,22 @@ export default (app) => {
     }));
 
     app.use(express.json())
-    
-    app.use('/upload' , express.static("upload")) // in brwoser
+
+    app.use('/upload', express.static("upload")) // in brwoser
 
     dbConnection()
 
     app.use("/users", userController)
     app.use("/notes", noteController)
 
+    app.use("/", (req, res, next) => {
+        return res.status(200).json({
+            message: "Hello"
+        })
+    })
+
     app.use((err, req, res, next) => {
-      return   res.status(err.cause || 500).json({
+        return res.status(err.cause || 500).json({
             message: err.message,
             stack: err.stack
         })
