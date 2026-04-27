@@ -1,0 +1,3 @@
+src/config/.env.production
+src/config/.env.development
+node_modules
